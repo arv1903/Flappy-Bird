@@ -33,10 +33,5 @@ class Bird:
 		self.rect.x = self.x
 		self.rect.y = self.y
 
-	def reset_pos(self):
-		self.rect         = self.image.get_rect()
-		self.rect.midleft = self.screen_rect.midleft
-		self.rect.x       = 10
-
 	def blitme(self):
 		self.screen.blit(self.image, self.rect)

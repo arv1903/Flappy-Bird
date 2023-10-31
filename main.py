@@ -21,6 +21,9 @@ class Game:
 		self.title        = pygame.display.set_caption(self.game_setting.title)
 		self.bg_color     = self.game_setting.bg_color
 		self.bg_image     = self.game_setting.bg_image
+
+		self.game_setting.screen_width  = self.screen.get_rect().width
+		self.game_setting.screen_height = self.screen.get_rect().height
 		
 		self.bird     = bird.Bird(self)
 		self.floor    = floor.Floor(self)
@@ -36,11 +39,12 @@ class Game:
 			self.floor.update()
 
 			self.bird.update()
-			self.floor.update()		
+			self.floor.update()
+			self.check_floor()		
 
-			self.bird.bird_drop()		
-
-
+	def check_floor(self):
+		if self.bird.rect.bottom < (self.game_setting.screen_height - 100):
+			self.bird.bird_drop()
 
 	def events(self):
 
