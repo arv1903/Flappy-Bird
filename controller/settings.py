@@ -13,9 +13,25 @@ class Settings:
 		self.bg_image      = pygame.image.load("img/bg.jpg")
 
 		#bird setting
-		self.bird_flying_speed = 1.5
-		self.bird_drop_speed   = 1
+		self.bird_flying_speed = 3
+		self.bird_drop_speed   = 1.5
 		self.bird_life         = 1
 
 		#floor setting
-		self.floor_speed = 1
+		self.floor_speed = 0.5
+
+		#obstacle aetting
+		
+		self.obs_speed   = 0.5
+		self.obs_gap     = 200
+
+		#setting R pipe
+		self.pipe_height = -1 * randint(10, 350) #-400
+
+		#setting pipe
+		self.pipe_depth  = self.pipe_height + 400 + self.obs_gap
+
+		#point 
+		self.point       = 0.05
+
+	
