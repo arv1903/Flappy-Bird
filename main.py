@@ -46,10 +46,11 @@ class Game:
 				self.bird_fall()
 				self.check_score()
 
-				self.stats.level += 0.001 # LEVEL
+				self.stats.level += 0.001 
 				self.score_board.show_level()
 
 				self.level()
+				self.stats.loadData()
 
 			self.update()
 
@@ -119,8 +120,8 @@ class Game:
 
 			self.score_board.show_score()
 
-			self.nPipe.rect.x     = 400
-			self.rPipe.rect.x     = 400
+			self.nPipe.rect.x     = 500
+			self.rPipe.rect.x     = 500
 
 			pygame.mouse.set_visible(False)
 
@@ -152,7 +153,6 @@ class Game:
 			if self.game_setting.bird_life == 0:
 				self.check_score()
 				self.game_over()
-				self.stats.saveData()
 
 if __name__ == "__main__":
 	Game().run()

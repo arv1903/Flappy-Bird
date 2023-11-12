@@ -1,4 +1,5 @@
 from json import load, dump
+import sqlite3
 
 class GameStatistics:
 
@@ -22,20 +23,20 @@ class GameStatistics:
 	####################
 	#LOAD AND SAVE DATA#
 	####################
-	
+
 	def loadData(self):
+		conn = sqlite3.connect('highscore.db')
+		c    = conn.cursor()
+		with conn:
+			c.execute("""
+				CREATE TABLE IF NOT EXISTS highscore (
+					highscore INTEGER NOT NULL
+				);
+			""")
+		conn.commit()		
+		c.execute("SELECT * FROM highscore")
+		highscore = max(c.fetchone()[0], round(self.score,-1))
+		with conn:
+			c.execute(f"UPDATE highscore SET highscore = {highscore}")
 
-		with open(self.fileData) as f:
-			data_load = load(f)
-
-		return data_load
-
-	def saveData(self):
-
-		data = self.high_score
-		data = round(data, -1)
-
-		with open(self.fileData, "w") as f:
-			dump(data,f)
-
-		return data
+		return highscore

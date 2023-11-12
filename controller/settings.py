@@ -18,15 +18,15 @@ class Settings:
 		self.bird_life         = 1
 
 		#floor setting
-		self.floor_speed = 0.5
+		self.floor_speed = 1
 
 		#obstacle aetting
 		
-		self.obs_speed   = 0.5
-		self.obs_gap     = 200
+		self.obs_speed   = 1
+		self.obs_gap     = 300
 
 		#setting R pipe
-		self.pipe_height = -1 * randint(10, 350) #-400
+		self.pipe_height = -1 * randint(10, 200) #-400
 
 		#setting pipe
 		self.pipe_depth  = self.pipe_height + 400 + self.obs_gap
