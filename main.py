@@ -30,7 +30,6 @@ class Game:
 	def run(self):
 
 		while not self.error:
-
 			self.events()
 
 			if self.stats.game_active:
@@ -84,6 +83,8 @@ class Game:
 		pygame.mouse.set_visible(True)
 
 	def update(self):
+
+		pygame.time.Clock().tick(1500)
 		
 		self.screen.blit(self.bg_image, (0,0))
 
