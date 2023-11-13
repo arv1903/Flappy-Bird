@@ -23,7 +23,7 @@ class Settings:
 		#obstacle aetting
 		
 		self.obs_speed   = 1
-		self.obs_gap     = 300
+		self.obs_gap     = 250
 
 		#setting R pipe
 		self.pipe_height = -1 * randint(10, 200) #-400
