@@ -72,6 +72,8 @@ class Game:
 		if event.key == pygame.K_q:
 			sys.exit()
 		if event.key == pygame.K_SPACE:
+			if not self.stats.game_active:
+				self.stats.game_active = True
 			self.bird.moving_up = True
 
 	def keyUp(self, event):
