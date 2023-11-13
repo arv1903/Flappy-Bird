@@ -1,4 +1,3 @@
-from json import load, dump
 import sqlite3
 
 class GameStatistics:
