@@ -74,6 +74,23 @@ class Game:
 		if event.key == pygame.K_SPACE:
 			if not self.stats.game_active:
 				self.stats.game_active = True
+				self.game_setting.bird_life = 1
+				self.bird = bird.Bird(self)
+				self.bird.reset_pos()
+
+				self.stats.reset_statistics()
+				self.stats.game_active        = True
+
+				self.game_setting.obs_speed   = 1
+				self.game_setting.floor_speed = 1
+
+				self.score_board.show_score()
+
+				self.nPipe.rect.x     = 500
+				self.rPipe.rect.x     = 500
+
+				pygame.mouse.set_visible(False)
+
 			self.bird.moving_up = True
 
 	def keyUp(self, event):
