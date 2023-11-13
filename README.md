@@ -36,7 +36,7 @@ python main.py
 
 ## High Scores
 
-The game keeps track of the highest scores achieved by players. The scores are stored in an SQLite database (`highscores.db`).
+The game keeps track of the highest scores achieved by players. The scores are stored in an SQLite database (`highscore.db`).
 
 ## Contributing
 
