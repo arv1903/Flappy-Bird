@@ -32,7 +32,7 @@ python main.py
 
 - Press the spacebar to make the bird flap and navigate through the pipes.
 - Avoid hitting the pipes to stay alive.
-- Your score will increase for each successful pipe passage.
+- Your score will increase for the number of time the bird survives.
 
 ## High Scores
 
